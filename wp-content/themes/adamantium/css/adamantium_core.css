@@ -1,0 +1,60 @@
+/******************************************************************
+ *  ADAMANTIUM CORE
+ ******************************************************************/
+
+    /***********************************
+        Adamantium Page-Navi
+    ***********************************/
+
+    .page-navigation, .wp-prev-next {
+      margin: 1.1em 0 2.2em; 
+    }
+        .page-navigation ul, ol {
+          list-style: none;
+          list-style-image: none; 
+        }
+
+    .adamantium_page_navi li {
+      float: left;
+      margin-left: 10px;
+    }
+      .adamantium_page_navi li a {
+        padding: 3px 6px;
+        display: block;
+        text-decoration: none;
+        position: relative; 
+        }
+        .adamantium_page_navi li a:hover, .adamantium_page_navi li a:focus {
+          color: #f01d4f;
+          text-decoration: underline; 
+        }
+
+    li.apn-current {
+      padding: 3px 6px;
+      border-bottom: 2px solid #f01d4f;
+      position: relative; 
+    }
+
+    li.apn-prev-link,
+    li.apn-next-link {
+      font-weight: 700;
+      padding: 5px;
+    }
+      li.apn-prev-link a,
+      li.apn-next-link a {
+        padding: 0; 
+    }
+
+    li.apn-prev-link a:hover,
+    li.apn-next-link a:hover,
+    li.apn-first-page-link a:hover,
+    li.apn-last-page-link a:hover {
+      background: none; 
+    }
+
+    .wp-prev-next .prev-link {
+      float: left; 
+    }
+    .wp-prev-next .next-link {
+      float: right; 
+    }

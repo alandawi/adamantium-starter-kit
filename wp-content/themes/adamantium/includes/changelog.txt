@@ -1,0 +1,16 @@
+Adamantium | Starter-kit for WordPress
+
+Adamantium Starter-Kit for WordPress was created to speed up the development of WordPress themes, with flexibility and durability of the Adamantium
+
+For more information, please visit:
+
+http://www.adamantium-wp.com.ar/
+
+Author: Alan Gabriel Dawidowicz
+
+/******************************************************************
+ADAMANTIUM CHANGE LOG & HISTORY
+******************************************************************/
+
+/* v1.0 */
+- initial release

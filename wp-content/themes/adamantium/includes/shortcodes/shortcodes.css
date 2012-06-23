@@ -1,0 +1,74 @@
+/******************************************************************
+ *  SHORTCODES
+ ******************************************************************/
+
+    /***********************************
+        Box
+    ***********************************/
+
+	.box-shortcode {
+	    margin: 5px 0px;
+	    color: #666;
+	    padding: 10px;
+	}
+	.box-red {
+	    background-color: #FFB8B8;
+	    border: 1px solid #FF8C8C;
+	    color: #BF2F2F;
+	}
+	.box-yellow {
+	    background-color: #FFC;
+	    border: 1px solid #FC6;
+	    color: #960;
+	}
+	.box-green {
+	    background-color: #CF9;
+	    border: 1px solid #9C0;
+	    color: #360;
+	}
+	.box-blue {
+	    background-color: #D1F2F5;
+	    border: 1px solid #AFDEE2;
+	    color: #38878E;
+	}
+
+	/***********************************
+        Highlights
+    ***********************************/
+
+	.text-highlight { padding: 2px }
+	.highlight-yellow,
+	.highlight-yellow a {
+	    background-color: #FFF7A8;
+	    color: #695D43;
+	}
+	.highlight-pink,
+	.highlight-pink a {
+	    background-color: #F7DEEB;
+	    color: #724473;
+	}
+	.highlight-purple,
+	.highlight-purple a {
+	    background-color: #E0DBF6;
+	    color: #5C5577;
+	}
+	.highlight-blue,
+	.highlight-blue a {
+	    background-color: #D7F0FF;
+	    color: #2A67A4;
+	}
+	.highlight-green,
+	.highlight-green a {
+	    background-color: #E7FFCE;
+	    color: #47630A;
+	}
+	.highlight-red,
+	.highlight-red a {
+	    background: #FFCEBE;
+	    color: #A22121;
+	}
+	.highlight-gray,
+	.highlight-gray a {
+	    background-color: #EBEBEB;
+	    color: #787777;
+	}
