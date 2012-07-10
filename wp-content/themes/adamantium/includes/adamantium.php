@@ -49,15 +49,7 @@
 	        h1 a { background-image:url('.get_bloginfo('template_directory').'/img/custom-login-logo.png) !important; }
 	    </style>';
 	}
-	function adamantium_wp_login_url() {
-		echo bloginfo('url');
-	}
-	function adamantium_wp_login_title() {
-		echo get_option('blogname');
-	}
 	add_action('login_head', 'adamantium_custom_login_logo');
-	add_filter('login_headerurl', 'adamantium_wp_login_url');
-	add_filter('login_headertitle', 'adamantium_wp_login_title');
 
 
 
@@ -169,4 +161,12 @@
 		}
 		echo '</ol></div>'.$after."";
 	}
+
+
+
+	// Add a Favicon Using a WordPress Hook
+	function adamantium_favicon(){
+		echo "<link rel='shortcut icon' href='" . get_stylesheet_directory_uri() . "/favicon.ico' />" . "\n";
+	}
+	add_action( 'wp_head', 'adamantium_favicon');
 ?>

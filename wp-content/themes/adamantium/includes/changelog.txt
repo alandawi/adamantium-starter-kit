@@ -12,5 +12,20 @@ Author: Alan Gabriel Dawidowicz
 ADAMANTIUM CHANGE LOG & HISTORY
 ******************************************************************/
 
-/* v1.0 */
+/* v1.1 */ (2012-07-10)
+- updates in Options Framework
+- updates in WPAlchemy MetaBox PHP Class
+- update the screenshot.png
+- added function "Add a Favicon using a WordPress Hook"
+- added function "Remove admin name in comments class"
+- updates in README.txt
+- removed author.php (you can use archive.php or add it yourself)
+- fixed some spelling errors
+- removed "js" folder (empty folder, you can add if necessary)
+- organizing bones & functions for simplicity
+- updates in custom-post-types.php
+- fixed Custom Login
+
+
+/* v1.0 */ (2012-06-22)
 - initial release

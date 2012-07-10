@@ -9,6 +9,18 @@
 		Any option you want to add for security will stay in this place
 	*/
 
+	// Remove admin name in comments class
+	function adamantium_remove_comment_author_class( $classes ) {
+	    foreach( $classes as $key => $class ) {
+	        if(strstr($class, "comment-author-")) {
+	            unset( $classes[$key] );
+	        }
+	    }
+	    return $classes;
+	}
+	add_filter( 'comment_class' , 'adamantium_remove_comment_author_class' );
+
+
 	// Hide login errors
 	add_filter('login_errors', create_function('$a', "return null;"));
 

@@ -69,10 +69,10 @@
 	/* If you are not using Metaboxes can comment this lines */
 	require (TEMPLATEPATH . '/includes/metaboxes/setup.php');
 	require (TEMPLATEPATH . '/includes/metaboxes/simple-spec.php');
-	//require (TEMPLATEPATH . '/includes/metaboxes/full-spec.php');
-	//require (TEMPLATEPATH . '/includes/metaboxes/checkbox-spec.php');
-	//require (TEMPLATEPATH . '/includes/metaboxes/radio-spec.php');
-	//require (TEMPLATEPATH . '/includes/metaboxes/select-spec.php');
+	require (TEMPLATEPATH . '/includes/metaboxes/full-spec.php');
+	require (TEMPLATEPATH . '/includes/metaboxes/checkbox-spec.php');
+	require (TEMPLATEPATH . '/includes/metaboxes/radio-spec.php');
+	require (TEMPLATEPATH . '/includes/metaboxes/select-spec.php');
 
 
 /***************************************************************************************/
