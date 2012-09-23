@@ -1,0 +1,61 @@
+Adamantium | Starter-kit for WordPress
+
+Adamantium Starter-Kit for WordPress was created to speed up the development of WordPress themes, with flexibility and durability of the Adamantium
+
+For more information, please visit:
+
+http://www.adamantium-wp.com.ar/
+
+Author: Alan Gabriel Dawidowicz
+
+/******************************************************************
+ADAMANTIUM CHANGE LOG & HISTORY
+******************************************************************/
+
+/* v1.2 Colossus Update */ (2012-09-23)
+- move to the root changelog.txt
+- removed function "Add a Favicon using a WordPress Hook"
+- removed function "Character Counter Excerpt"
+- added "js" directory
+- added "adamantium_scripts_and_styles" in functions.php
+- update the screenshot.png
+- added "keywords" and "author" in header.php
+- added "Favicon" in header.php
+- added "fallback_no_menu" in header-menu
+- fix searchform.php
+- added "is_front_page" (title) in header.php (thanks SuI)
+- added "MediaAccess" (Setup WPAlchemy)
+- added "upload-file" example metabox
+- optimized style.css
+- optimized wp_core.css
+- optimized shortcodes.php
+- optimized functions.php
+- removed Link CSS in header.php and use "wp_enqueue_style" (A best practice)
+- removed shortcodes.css (No need at all. You can add if necessary)
+- removed wordpress-thumbnail-upload-metabox.php
+- removed snippets.php (No need at all. You can add if necessary)
+- removed attachment.php (No need at all. You can add if necessary)
+- added loop-archive.php
+- added basic structure in comments.php
+- optimized options.php (thanks Alex)
+- added the title in maintenance mode extra-options-theme.php
+- fix adamantium_scripts_and_styles function (thanks SuI)
+
+
+
+/* v1.1 Update */ (2012-07-10)
+- updates in Options Framework
+- updates in WPAlchemy MetaBox PHP Class
+- update the screenshot.png
+- added function "Add a Favicon using a WordPress Hook"
+- added function "Remove admin name in comments class"
+- updates in README.txt
+- removed author.php (you can use archive.php or add it yourself)
+- fixed some spelling errors
+- removed "js" folder (empty folder, you can add if necessary)
+- updates in custom-post-types.php
+- fixed Custom Login
+
+
+/* v1.0 Update */ (2012-06-22)
+- initial release

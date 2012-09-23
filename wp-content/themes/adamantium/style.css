@@ -4,7 +4,7 @@ Theme URI: http://www.adamantium-wp.com.ar/
 Description: This site was built using the Adamantium Starter-Kit developed by Alan Gabriel Dawidowicz. For more information about Adamantium, you can visit the <a href="http://www.adamantium-wp.com.ar/" title="Adamantium Starter-Kit">website</a>.
 Author: Alan Gabriel Dawidowicz
 Author URI: http://www.alandawi.com.ar/
-Version: 1.0
+Version: 1.2
 Tags: development, kit, starter, base
 Licence: GPL;
 */
@@ -13,13 +13,8 @@ Licence: GPL;
 /***********************************
     IMPORTS 
 ***********************************/
-    
-    @import url('css/shortcodes.css');
-    @import url('css/wp_core.css');
-    @import url('css/adamantium_core.css');
-
-
-
+@import url('css/wp_core.css');
+@import url('css/adamantium_core.css');
 
 
 /***********************************
@@ -27,118 +22,105 @@ Licence: GPL;
 ***********************************/
 
 
-
-
-
 /***********************************
     HEADER 
 ***********************************/
 
 
-
-
-
 /***********************************
     MENUS 
 ***********************************/
+#primary-menu {
+    background: #4572BF; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#4572BF, #6187C7);
+    background: -o-linear-gradient(#4572BF, #6187C7);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4572BF), to(#6187C7)); /* older webkit syntax */
+    background: -webkit-linear-gradient(#4572BF, #6187C7);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+    clear: both;
+    display: block;
+    float: left;
+    margin: 0 auto 6px;
+    width: 100%;
+}
 
-    /*
-        First we prepare the navigation menu bar
-    */
-    #primary-menu {
-        background: #4572BF; /* Show a solid color for older browsers */
-        background: -moz-linear-gradient(#4572BF, #6187C7);
-        background: -o-linear-gradient(#4572BF, #6187C7);
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4572BF), to(#6187C7)); /* older webkit syntax */
-        background: -webkit-linear-gradient(#4572BF, #6187C7);
-        -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-        -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-        clear: both;
-        display: block;
-        float: left;
-        margin: 0 auto 6px;
-        width: 100%;
-    }
+/*
+    Now we style the unordered list, hover effect, and sub menus
+*/
+#primary-menu ul {
+    font-size: 13px;
+    list-style: none;
+    margin: 0 0 0 -0.8125em;
+    padding-left: 0;
+}
+#primary-menu li {
+    float: left;
+    position: relative;
+}
+#primary-menu a {
+    color: #eee;
+    display: block;
+    line-height: 3.333em;
+    padding: 0 1.2125em;
+    text-decoration: none;
+}
+#primary-menu ul ul {
+    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    display: none;
+    float: left;
+    margin: 0;
+    position: absolute;
+    top: 3.333em;
+    left: 0;
+    width: 188px;
+    z-index: 99999;
+}
+#primary-menu ul ul ul {
+    left: 100%;
+    top: 0;
+}
+#primary-menu ul ul a {
+    background: #f9f9f9;
+    border-bottom: 1px dotted #ddd;
+    color: #444;
+    font-size: 13px;
+    font-weight: normal;
+    height: auto;
+    line-height: 1.4em;
+    padding: 10px 10px;
+    width: 168px;
+}
+#primary-menu li:hover > a,
+#primary-menu ul ul :hover > a,
+#primary-menu a:focus {
+    background: #efefef;
+}
+#primary-menu li:hover > a,
+#primary-menu a:focus {
+    background: #f9f9f9; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
+    background: -o-linear-gradient(#f9f9f9, #e5e5e5);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#e5e5e5)); /* Older webkit syntax */
+    background: -webkit-linear-gradient(#f9f9f9, #e5e5e5);
+    color: #373737;
+}
+#primary-menu ul li:hover > ul {
+    display: block;
+}
 
-    /*
-        Now we style the unordered list, hover effect, and sub menus
-    */
-    #primary-menu ul {
-        font-size: 13px;
-        list-style: none;
-        margin: 0 0 0 -0.8125em;
-        padding-left: 0;
-    }
-    #primary-menu li {
-        float: left;
-        position: relative;
-    }
-    #primary-menu a {
-        color: #eee;
-        display: block;
-        line-height: 3.333em;
-        padding: 0 1.2125em;
-        text-decoration: none;
-    }
-    #primary-menu ul ul {
-        -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-        -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-        display: none;
-        float: left;
-        margin: 0;
-        position: absolute;
-        top: 3.333em;
-        left: 0;
-        width: 188px;
-        z-index: 99999;
-    }
-    #primary-menu ul ul ul {
-        left: 100%;
-        top: 0;
-    }
-    #primary-menu ul ul a {
-        background: #f9f9f9;
-        border-bottom: 1px dotted #ddd;
-        color: #444;
-        font-size: 13px;
-        font-weight: normal;
-        height: auto;
-        line-height: 1.4em;
-        padding: 10px 10px;
-        width: 168px;
-    }
-    #primary-menu li:hover > a,
-    #primary-menu ul ul :hover > a,
-    #primary-menu a:focus {
-        background: #efefef;
-    }
-    #primary-menu li:hover > a,
-    #primary-menu a:focus {
-        background: #f9f9f9; /* Show a solid color for older browsers */
-        background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
-        background: -o-linear-gradient(#f9f9f9, #e5e5e5);
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#e5e5e5)); /* Older webkit syntax */
-        background: -webkit-linear-gradient(#f9f9f9, #e5e5e5);
-        color: #373737;
-    }
-    #primary-menu ul li:hover > ul {
-        display: block;
-    }
-
-    /*
-        Styling the currently rendered page
-    */
-    #primary-menu .current-menu-item > a,
-    #primary-menu .current-menu-ancestor > a,
-    #primary-menu .current_page_item > a,
-    #primary-menu .current_page_ancestor > a {
-        font-weight: bold;
-    }
-
-
-
+/*
+    Styling the currently rendered page
+*/
+#primary-menu .current-menu-item > a,
+#primary-menu .current-menu-ancestor > a,
+#primary-menu .current_page_item > a,
+#primary-menu .current_page_ancestor > a {
+    font-weight: bold;
+}
 
 
 /***********************************
@@ -146,15 +128,9 @@ Licence: GPL;
 ***********************************/
 
 
-
-
-
 /***********************************
     SIDEBAR 
 ***********************************/
-
-
-
 
 
 /***********************************
@@ -162,13 +138,6 @@ Licence: GPL;
 ***********************************/
 
 
-
-
-
 /***********************************
     EXTRA 
 ***********************************/
-
-
-
-

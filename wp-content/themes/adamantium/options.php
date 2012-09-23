@@ -129,8 +129,6 @@ function optionsframework_options() {
 						"type" => "checkbox");
 
 
-
-
 	// Advanced Settings
 	$options[] = array( "name" => "Advanced",
 						"type" => "heading");
@@ -261,25 +259,8 @@ function optionsframework_options() {
 		'settings' => $wp_editor_settings );
 
 
-
-
-
-	// Footer
-	$options[] = array( "name" => "Footer",
-						"type" => "heading");
-
-	$options[] = array(
-		'name' => __('Input the footer Text', 'options_framework_theme'),
-		'desc' => __('Example: "Copyright - All Rights Reserved"', 'options_framework_theme'),
-		'id' => 'footer_text',
-		'std' => '',
-		'type' => 'text');
-	
-
-
-
-	// Extra
-	$options[] = array( "name" => "Extra",
+	// Maintenance Mode
+	$options[] = array( "name" => "Maintenance Mode",
 						"type" => "heading");
 
 	$options[] = array( "name" => "Maintenance Mode",

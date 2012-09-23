@@ -92,20 +92,6 @@
 
 
 
-	// Character Counter Excerpt
-	function adamantium_excerpt_count(){
-  		echo '<script>jQuery(document).ready(function(){jQuery("#postexcerpt .handlediv").after("<div style=\"position:absolute;top:0px;right:5px;color:#666;\"><small>Length of the extract: </small><input type=\"text\" value=\"0\" maxlength=\"3\" size=\"3\" id=\"excerpt_counter\" readonly=\"\" style=\"background:#fff;\"> <small>character(s).</small></div>");
-  			jQuery("#excerpt_counter").val(jQuery("#excerpt").val().length);
-  			jQuery("#excerpt").keyup( function() {
-			jQuery("#excerpt_counter").val(jQuery("#excerpt").val().length);
-   			});
-			});</script>';
-	}
-	add_action( 'admin_head-post.php', 'adamantium_excerpt_count');
-	add_action( 'admin_head-post-new.php', 'adamantium_excerpt_count');
-
-
-
 	// Adamantium Page Navigation
 	function adamantium_page_navi($before = '', $after = '') {
 		global $wpdb, $wp_query;
@@ -161,12 +147,4 @@
 		}
 		echo '</ol></div>'.$after."";
 	}
-
-
-
-	// Add a Favicon Using a WordPress Hook
-	function adamantium_favicon(){
-		echo "<link rel='shortcut icon' href='" . get_stylesheet_directory_uri() . "/favicon.ico' />" . "\n";
-	}
-	add_action( 'wp_head', 'adamantium_favicon');
 ?>

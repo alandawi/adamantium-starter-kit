@@ -8,7 +8,6 @@
 
 <?php get_header(); ?>
 
-	<!--#content-->
 	<?php get_template_part( 'loop', 'page' ); ?>
 
 <?php get_sidebar(); ?>
