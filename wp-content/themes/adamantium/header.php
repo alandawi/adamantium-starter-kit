@@ -7,13 +7,19 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<!-- META TAGS -->
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <meta name="description" content="<?php bloginfo('description'); ?>" />
 <meta name="keywords" content="your, keywords, here" />
 <meta name="author" content="Alan Gabriel Dawidowicz">
 
-<!-- TITLE -->   
 <title><?php if ( is_category() ) {
 		echo 'Category Archive for &quot;'; single_cat_title(); echo '&quot; | '; bloginfo( 'name' );
 	} elseif ( is_tag() ) {
@@ -34,15 +40,18 @@
 		echo wp_title(''); echo ' | '; bloginfo( 'name' );
 	} ?></title>
 
-<!-- LINK TAGS -->  
-<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />  
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS2 Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<link rel="icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />  
+
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
 
 <?php wp_enqueue_script("jquery"); /* Loads jQuery if it hasn't been loaded already */ ?>
 
 <?php wp_head(); /* this is used by many Wordpress features and plugins to work proporly */ ?>
+
+<!-- Google Analytics -->
+<!-- end Google Analytics -->
 </head>
 
 <body <?php body_class(); ?>>

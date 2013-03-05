@@ -8,7 +8,7 @@
 
 <?php get_header(); ?>
 
-	<!--#content-->
+	<p>Error 404 - Not Found</p>
 
 <?php get_sidebar(); ?>
 

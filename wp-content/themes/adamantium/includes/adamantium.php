@@ -19,6 +19,9 @@
 	*/
 
 
+	/******************************
+	| GENERAL
+	******************************/
 
 	// Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 	function adamantium_filter_ptags_on_images($content){
@@ -33,13 +36,7 @@
 		global $post;
 		return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
 	}
-	add_filter('excerpt_more', 'adamantium_excerpt_more');
-
-
-
-	// wp custom background
-	add_custom_background(); 
-	// More info: http://themble.com/support/adding-header-background-image-support/
+	add_filter('excerpt_more', 'adamantium_excerpt_more');	
 	
 
 
@@ -50,14 +47,6 @@
 	    </style>';
 	}
 	add_action('login_head', 'adamantium_custom_login_logo');
-
-
-
-	// removes the WordPress version from your header for security
-    function adamantium_remove_version() {
-        return '<!--built on the Adamantium Starter Kit -->';
-    }
-    add_filter('the_generator', 'adamantium_remove_version');
 
 
 
@@ -78,17 +67,125 @@
 
 
 
-	// Automatically generate the meta-description in the news
-	function adamantium_metadesc() {
-		global $post;
-		if (!is_single()) { return; }
-		$meta = strip_tags($post->post_content);
-		$meta = strip_shortcodes($post->post_content);
-		$meta = str_replace(array("\n", "\r", "\t"), ' ', $meta);
-		$meta = substr($meta, 0, 125);
-		echo "<meta name='description' content='$meta' />";
+
+	/******************************
+	| SECURITY
+	******************************/
+
+	// removes the WordPress version from your header for security
+    function adamantium_remove_version() {
+        return '<!--built on the Adamantium Starter Kit -->';
+    }
+    add_filter('the_generator', 'adamantium_remove_version');
+
+
+
+    // Remove admin name in comments class
+	function adamantium_remove_comment_author_class( $classes ) {
+	    foreach( $classes as $key => $class ) {
+	        if(strstr($class, "comment-author-")) {
+	            unset( $classes[$key] );
+	        }
+	    }
+	    return $classes;
 	}
-	add_action('wp_head', 'adamantium_metadesc');
+	add_filter( 'comment_class' , 'adamantium_remove_comment_author_class' );
+
+
+
+	// Hide login errors
+	add_filter('login_errors', create_function('$a', "return null;"));
+
+
+
+	// Removes the WordPress version from your header for security
+	remove_action('wp_head', 'wp_generator');
+
+
+
+	// Removes the WordPress version from your RSS for security
+	function adamantium_remove_feed_generator() {
+		return '';
+	}
+	add_filter('the_generator', 'adamantium_remove_feed_generator');
+
+
+
+	// Do not allow users access to the administrator for subscribers
+	function adamantium_restrict_access_admin_panel(){
+	  global $current_user;
+	  get_currentuserinfo();
+	  if ($current_user->user_level <  4) {
+	    wp_redirect( get_bloginfo('url') );
+	    exit;
+	  }
+	}
+	add_action('admin_init', 'adamantium_restrict_access_admin_panel', 1);
+
+
+
+	// Remove injected CSS from recent comments widget
+	function adamantium_remove_recent_comments_style() {
+	  global $wp_widget_factory;
+	  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+	    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+	  }
+	}
+	add_action('wp_head', 'adamantium_remove_recent_comments_style', 1);
+
+
+
+	// Remove injected CSS from gallery
+	function adamantium_gallery_style($css) {
+	  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
+	}
+	add_filter('gallery_style', 'adamantium_gallery_style');
+
+
+
+	/******************************
+	| CUSTOM FUNCTIONS
+	******************************/
+
+	// Add to know the ID column of entries
+	function adamantium_posts_columns_id($defaults){
+	    $defaults['wps_post_id'] = __('ID');
+	    return $defaults;
+	}
+	function adamantium_posts_custom_id_columns($column_name, $id){
+	  if($column_name === 'wps_post_id'){
+	          echo $id;
+	    }
+	}
+	add_filter('manage_posts_columns', 'adamantium_posts_columns_id', 5);
+	add_action('manage_posts_custom_column', 'adamantium_posts_custom_id_columns', 5, 2);
+	add_filter('manage_pages_columns', 'adamantium_posts_columns_id', 5);
+	add_action('manage_pages_custom_column', 'adamantium_posts_custom_id_columns', 5, 2);
+
+
+
+	// Add a column to display the Featured Post Thumbnail
+	add_image_size( 'admin-list-thumb', 150, 150, false );
+	add_filter('manage_posts_columns', 'adamantium_add_post_thumbnail_column', 5);
+	add_filter('manage_pages_columns', 'adamantium_add_post_thumbnail_column', 5);
+
+	function adamantium_add_post_thumbnail_column($cols){
+	  $cols['adamantium_post_thumb'] = __('Featured Image');
+	  return $cols;
+	}
+	add_action('manage_posts_custom_column', 'adamantium_display_post_thumbnail_column', 5, 2);
+	add_action('manage_pages_custom_column', 'adamantium_display_post_thumbnail_column', 5, 2);
+
+	function adamantium_display_post_thumbnail_column($col, $id){
+	  switch($col){
+	    case 'adamantium_post_thumb':
+	      if( function_exists('the_post_thumbnail') )
+	        echo the_post_thumbnail( 'admin-list-thumb' );
+	      else
+	        echo 'Not supported in theme';
+	      break;
+	  }
+	}
 
 
 

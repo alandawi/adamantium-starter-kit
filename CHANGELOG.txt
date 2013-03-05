@@ -12,6 +12,31 @@ Author: Alan Gabriel Dawidowicz
 ADAMANTIUM CHANGE LOG & HISTORY
 ******************************************************************/
 
+/* v1.4 Update */ (2013-12-08)
+- removed the library WPAlchemy Metabox (I recommend the plugin: "Advanced Custom Fields")
+- removed the function "add_custom_background"
+- update custom-post-types.php
+- update functions.php
+
+
+
+/* v1.3 Update */ (2013-03-04)
+- several changes in header.php
+- several changes in archive.php
+- several changes in functions.php
+- translated some elements
+- removed youtube shortcode (shortcodes.php)
+- added example shortcode (shortcodes.php)
+- Fix problems with meta description and SEO
+- update the scripts.js (added basic document ready)
+- removed extra-options-theme.php (No need at all. You can add if necessary)
+- removed custom-columns.php and move the code to adamantium.php
+- removed security.php and move the code to adamantium.php
+- added normalize.css
+- optimized style.css
+
+
+
 /* v1.2 Colossus Update */ (2012-09-23)
 - move to the root changelog.txt
 - removed function "Add a Favicon using a WordPress Hook"

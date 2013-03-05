@@ -257,17 +257,6 @@ function optionsframework_options() {
 		'id' => 'example_editor',
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );
-
-
-	// Maintenance Mode
-	$options[] = array( "name" => "Maintenance Mode",
-						"type" => "heading");
-
-	$options[] = array( "name" => "Maintenance Mode",
-						"desc" => "Enable / Disable",
-						"id" => "maintenance_mode",
-						"std" => "0",
-						"type" => "checkbox");
 								
 	return $options;
 }

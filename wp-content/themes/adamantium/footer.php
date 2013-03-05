@@ -6,6 +6,6 @@
  */
 ?>
 
-<?php wp_footer(); /* this is used by many Wordpress features and plugins to work proporly */ ?>
+<?php wp_footer(); /* this is used by many Wordpress features and plugins to work properly */ ?>
 </body>
 </html>

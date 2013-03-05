@@ -8,17 +8,38 @@
 
 <?php get_header(); ?>
 
-	<h1>
-		<?php if ( is_day() ) : /* if the daily archive is loaded */ ?>
-			<?php printf( __( 'Daily Archives: <span>%s</span>' ), get_the_date() ); ?>
-		<?php elseif ( is_month() ) : /* if the montly archive is loaded */ ?>
-			<?php printf( __( 'Monthly Archives: <span>%s</span>' ), get_the_date('F Y') ); ?>
-		<?php elseif ( is_year() ) : /* if the yearly archive is loaded */ ?>
-			<?php printf( __( 'Yearly Archives: <span>%s</span>' ), get_the_date('Y') ); ?>
-		<?php else : /* if anything else is loaded, ex. if the tags or categories template is missing this page will load */ ?>
-			Blog Archives
-		<?php endif; ?>
-	</h1>
+	<?php if (is_category()) { ?>
+	    <h1 class="archive-title h2">
+		    <span>Posts Categorized:</span> <?php single_cat_title(); ?>
+    	</h1>
+    
+    <?php } elseif (is_tag()) { ?> 
+	    <h1 class="archive-title h2">
+		    <span>Posts Tagged:</span> <?php single_tag_title(); ?>
+	    </h1>
+    
+    <?php } elseif (is_author()) { 
+    	global $post;
+    	$author_id = $post->post_author;
+    ?>
+	    <h1 class="archive-title h2">
+	    	<span>Posts By:</span> <?php echo get_the_author_meta('display_name', $author_id); ?>
+	    </h1>
+    <?php } elseif (is_day()) { ?>
+	    <h1 class="archive-title h2">
+			<span>Daily Archives:</span> <?php the_time('l, F j, Y'); ?>
+	    </h1>
+
+	<?php } elseif (is_month()) { ?>
+	    <h1 class="archive-title h2">
+	    	<span>Monthly Archives:</span> <?php the_time('F Y'); ?>
+        </h1>
+
+    <?php } elseif (is_year()) { ?>
+        <h1 class="archive-title h2">
+    	    <span>Yearly Archives:</span> <?php the_time('Y'); ?>
+        </h1>
+    <?php } ?>
 
 	<?php get_template_part( 'loop', 'index' ); ?>
 

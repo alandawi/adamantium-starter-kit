@@ -60,7 +60,7 @@ function custom_post_example() {
         */
         
         // now let's add custom categories (these act like categories)
-    register_taxonomy( 'custom_cat', 
+    register_taxonomy( 'custom_category', 
         array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
         array('hierarchical' => true,     /* if this is true it acts like categories */             
                 'labels' => array(
